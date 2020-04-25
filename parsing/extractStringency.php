@@ -12,7 +12,7 @@
 	}
 
 
-	$file = fopen("OxCGRT.csv","r");
+	$file = fopen("../externalData/GovernmentResponse.csv","r");
 	//$cnt = 0;
 	while(! feof($file)) {
 		$l = explode(",",fgets($file));
@@ -25,9 +25,9 @@
 		
 		//if ($cnt > 100)
 		//	break;
-		if ($date >= 20200229 and $date <= 20200411) {
+		if ($date >= 20200215 and $date <= 20200411) {
 			echo $cntry . "\t" . $date . "\t" . $val . "\n";
-			$afile = fopen("ox/".$cntry.".csv","a");
+			$afile = fopen("../externalData/GovernmentResponseByCountry/".$cntry.".csv","a");
 			$year = substr($date,0,4);
 			$mo = substr($date,4,2);
 			$day = substr($date,6,2);
